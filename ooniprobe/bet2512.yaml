@@ -1,0 +1,15 @@
+---
+name: Test URL blocklists in Cyprus
+description: "This deck examines whether (and how) websites are blocked and
+    tries to detect censorship and/or surveillance systems in your network. The
+    Web Connectivity test examines whether access to websites is blocked through
+    DNS tampering, TCP/IP blocking, or by a transparent HTTP proxy. This deck
+    uses a list of all entries from the official blocking list in Cyprus
+    (located in http://blocking.nba.com.cy)"
+schedule: "@daily"
+icon: "fa-unlink"
+tasks:
+- name: Runs the Web Connectivity Test
+  ooni:
+    test_name: web_connectivity
+    file: /ooniprobe/var/lib/ooni/resources/bet2512.list
