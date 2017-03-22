@@ -26,11 +26,11 @@ Then, you need to build the ooniprobe container with the following command:
 docker build -t ooniprobe bet2512/
 ```
 
-For further information about running Docker on Windows refer to the
+For further instructions on running Docker on Windows refer to the
 [Docker documentation](https://docs.docker.com/docker-for-windows).
 
 
-## Start the docker container
+## Start the Docker container
 
 In order to start running the tests run the following command (in Linux you
 need to be a superuser, e.g. by using `sudo` before the command):
@@ -39,7 +39,7 @@ need to be a superuser, e.g. by using `sudo` before the command):
 docker run -p 8842:8842 -d ooniprobe
 ```
 
-If you don't shut down your system and if you don't stop the docker container,
+If you don't shut down your system and if you don't stop the Docker container,
 the tests will be running every day. Otherwise, please remember to run the
 above command after each reboot, in order to re-start the container.
 
@@ -52,3 +52,11 @@ running:
 ```
 docker-machine ip ooniprobe
 ```
+
+
+### Things you should know before using ooniprobe
+
+OONI is not designed to protect the privacy of those running the tests. Please
+go through the relative page on the project website
+[here](https://ooni.torproject.org/about/risks/) and only proceed if you
+understand the risks involved.
