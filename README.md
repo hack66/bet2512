@@ -11,5 +11,5 @@ find installation instruction related to your system
 
 ```
 git clone https://github.com/anadahz/bet2512.git
-docker build -t ooniprobe bet2512/ && docker run -d ooniprobe
+docker build -t ooniprobe bet2512/ && docker run -p 8842:8842 -d ooniprobe
 ```

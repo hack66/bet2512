@@ -12,15 +12,18 @@ RUN set -x && \
     apt-get install -qq build-essential libdumbnet-dev libpcap-dev tor git \
                         libgeoip-dev libffi-dev python-dev python-pip libssl-dev
 
-RUN pip install ooniprobe --target /ooniprobe
+RUN pip install ooniprobe
 
 RUN git clone https://github.com/anadahz/bet2512.git /tmp/bet2512
-WORKDIR /ooniprobe
-COPY /tmp/bet2512/ooniprobe/bet2512.list var/lib/ooni/resources/
-COPY /tmp/bet2512/ooniprobe/bet2512.yaml share/ooni/decks-available/
-RUN ln -s /ooniprobe/share/ooni/share/ooni/decks-available/bet2512.yaml \
-          /ooniprobe/var/lib/ooni/decks-enabled/bet2512.yaml
-RUN touch var/lib/ooni/initialized
+RUN touch /var/lib/ooni/initialized
+RUN ooniprobe --info
+WORKDIR /tmp/bet2512/
+RUN set -x && \
+    cp /ooniprobe/bet2512.list /var/lib/ooni/resources/ && \
+    cp /ooniprobe/bet2512.yaml /usr/local/share/ooni/decks-available/
+RUN ln -s /usr/local/share/ooni/decks-available/bet2512.yaml \
+          /var/lib/ooni/decks-enabled/bet2512.yaml
 
+COPY ooniprobe/ooniprobe.conf /etc/ooniprobe.conf
 EXPOSE 8842
 CMD ["ooniprobe-agent", "run"]
