@@ -13,3 +13,8 @@ tasks:
   ooni:
     test_name: web_connectivity
     file: /var/lib/ooni/resources/bet2512.list
+
+- name: Runs the Web Connectivity Test
+  ooni:
+    test_name: web_connectivity
+    file: /var/lib/ooni/resources/tr.list
