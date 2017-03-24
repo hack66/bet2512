@@ -14,7 +14,7 @@ RUN set -x && \
 
 RUN pip install ooniprobe
 
-RUN git clone https://github.com/anadahz/bet2512.git /tmp/bet2512
+RUN git clone https://github.com/hack66/bet2512.git /tmp/bet2512
 RUN touch /var/lib/ooni/initialized
 RUN ooniprobe --info
 WORKDIR /tmp/bet2512/
