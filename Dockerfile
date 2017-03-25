@@ -21,6 +21,7 @@ WORKDIR /tmp/bet2512/
 RUN set -x && \
     cp ooniprobe/bet2512.list /var/lib/ooni/resources/ && \
     cp ooniprobe/tr.list /var/lib/ooni/resources/ && \
+    cp ooniprobe/eeep-v4.list /var/lib/ooni/resources/ && \
     cp ooniprobe/bet2512.yaml /usr/local/share/ooni/decks-available/
 RUN ln -s /usr/local/share/ooni/decks-available/bet2512.yaml \
           /var/lib/ooni/decks-enabled/bet2512.yaml
