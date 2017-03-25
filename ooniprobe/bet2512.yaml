@@ -18,3 +18,8 @@ tasks:
   ooni:
     test_name: web_connectivity
     file: /var/lib/ooni/resources/tr.list
+
+- name: Runs the Web Connectivity Test
+  ooni:
+    test_name: web_connectivity
+    file: /var/lib/ooni/resources/eeep-v4.list
