@@ -53,6 +53,9 @@ In order to start running the tests run the following command:
 docker run -p 8842:8842 -d ooniprobe
 ```
 
+The measurements will take some time to complete, so please allow at least
+three hours before disconnecting from the Internet.
+
 If you don't shut down your system and if you don't stop the Docker container,
 the tests will be running every day. Otherwise, please remember to run the
 above command after each reboot, in order to re-start the container.
@@ -94,5 +97,5 @@ go through the relative page on the project website
 [here](https://ooni.torproject.org/about/risks/) and only proceed if you
 understand the risks involved.
 
-Thank you for taking the time to run the test, we will update this page with the
-findings in early April.
+Thank you for taking the time to run the tests, we will update this page with
+the findings in early April.
