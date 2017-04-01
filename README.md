@@ -47,10 +47,16 @@ For further instructions on running Docker on Windows refer to the
 
 ## Start the Docker container
 
-In order to start running the tests run the following command:
+First, you need to find the IP address of the DNS server of your Internet
+Service Provider. You can do so by visiting the website
+[http://whatsmyresolver.stdlib.net/](http://whatsmyresolver.stdlib.net/). For
+example the primary DNS server address of CYTA is `195.14.130.170`.
+
+In order to start running the tests, replace `DNSRESOLVIP` with the IP address
+of your Internet Service Provider's DNS server and run the following command:
 
 ```
-docker run -p 8842:8842 -d ooniprobe
+docker run --dns DNSRESOLVIP -p 8842:8842 -d ooniprobe
 ```
 
 The measurements will take some time to complete, so please allow at least
