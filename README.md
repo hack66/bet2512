@@ -85,7 +85,7 @@ First, you need to find the ID of the ooniprobe Docker container:
 docker ps -q --filter ancestor=ooniprobe
 ```
 
-Copy the output of the previous command and use it in place of CONTID in the
+Copy the output of the previous command and use it in place of `CONTID` in the
 the following commands:
 
 ```
